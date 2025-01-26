@@ -1,0 +1,18 @@
+services:
+  web:
+    container_name: svelte-kit
+    build: .
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
+  pocketbase:
+    container_name: pocketbase
+    build: pocketbase
+    ports:
+      - 8080:8080
+    volumes:
+      - pb_data:/pb/pb_data
+      - ./pocketbase/pb_migrations:/pb/pb_migrations
+volumes:
+  pb_data:

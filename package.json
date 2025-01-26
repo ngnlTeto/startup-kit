@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
+		"pocketbase": "docker-compose up pocketbase",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -15,6 +16,10 @@
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run && npm run test:e2e",
 		"test:e2e": "playwright test"
+	},
+	"dependencies": {
+		"@inlang/paraglide-sveltekit": "^0.15.5",
+		"pocketbase": "^0.25.1"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
@@ -42,9 +47,6 @@
 		"typescript-eslint": "^8.20.0",
 		"vite": "^6.0.0",
 		"vitest": "^3.0.0"
-	},
-	"dependencies": {
-		"@inlang/paraglide-sveltekit": "^0.15.5"
 	},
 	"packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228"
 }
